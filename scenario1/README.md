@@ -12,6 +12,10 @@ Create a new Inventory to deploy Enmasse using Ansible Playbook.
 Sample inventory defined as [scenario1-with-standard-authservice.txt](./enmasse/scenario1-with-standard-authservice.txt) file:
 
 ```
+tar xvzf enmasse-0.28.0-rc6.tgz
+
+cd ansible
+
 ansible-playbook -i inventory/scenario1-with-standard-authservice.txt playbooks/openshift/deploy_all.yml
 ```
 

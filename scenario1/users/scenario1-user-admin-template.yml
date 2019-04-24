@@ -1,0 +1,26 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+labels:
+  template: scenario1-admin-user-template
+objects:  
+- apiVersion: user.enmasse.io/v1beta1
+  kind: MessagingUser
+  metadata:
+    name: scenario1.${USER_ID}
+  spec:
+    username: ${USER_ID}
+    authentication:
+      type: password
+      password: ${USER_PWD} # Base64 encoded
+    authorization:
+      - addresses: ["input_*", "results_*", "alerts"]
+        operations: ["send", "recv"]
+parameters:
+- description: User ID.
+  displayName: User ID
+  name: USER_ID
+  required: true
+- description: User Password
+  displayName: User Password
+  name: USER_PWD
+  required: true

@@ -1,0 +1,15 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressPlan
+metadata:
+  name: scenario1-batch-queue
+  labels:
+    app: enmasse
+spec:
+  displayName: Batch Queue
+  displayOrder: 1
+  shortDescription: Creates a batch queue sharing underlying broker with other queues.
+  longDescription: Creates a batch sized queue sharing underlying broker with other queues.
+  addressType: queue
+  resources:
+    router: 0.01
+    broker: 0.5

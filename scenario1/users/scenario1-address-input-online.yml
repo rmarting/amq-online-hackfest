@@ -1,0 +1,8 @@
+apiVersion: enmasse.io/v1beta1
+kind: Address
+metadata:
+    name: scenario1.input-online
+spec:
+    address: input_online
+    type: queue
+    plan: scenario1-online-queue

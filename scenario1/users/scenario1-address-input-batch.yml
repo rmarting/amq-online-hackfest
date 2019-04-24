@@ -1,0 +1,8 @@
+apiVersion: enmasse.io/v1beta1
+kind: Address
+metadata:
+    name: scenario1.input-batch
+spec:
+    address: input_batch
+    type: queue
+    plan: scenario1-batch-queue

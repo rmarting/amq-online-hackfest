@@ -1,0 +1,28 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressSpacePlan
+metadata:
+  labels:
+    app: enmasse
+  name: scenario1
+  namespace: enmasse-infra
+spec:
+  addressPlans:
+  - scenario1-online-queue
+  - scenario1-batch-queue
+  - scenario1-results-queue
+  - scenario1-alerts-topic
+  - scenario1-available-queue
+  - scenario1-offline-queue
+  addressSpaceType: standard
+  displayName: Scenario1
+  displayOrder: 0
+  infraConfigRef: scenario1infraconfig
+  longDescription: Messaging infrastructure based on Apache Qpid Dispatch Router and
+    Apache ActiveMQ Artemis. This plan allows an unlimited number of routers and brokers,
+    and is suitable for applications where you do not want to impose any restrictions.
+  resourceLimits:
+    aggregate: 10
+    broker: 10
+    router: 4
+  shortDescription: Messaging infrastructure based on Apache Qpid Dispatch Router
+    and Apache ActiveMQ Artemis.

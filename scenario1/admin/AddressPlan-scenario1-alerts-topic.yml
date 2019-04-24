@@ -1,0 +1,15 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressPlan
+metadata:
+  name: scenario1-alerts-topic
+  labels:
+    app: enmasse
+spec:
+  displayName: Alerts topic
+  displayOrder: 1
+  shortDescription: Creates a alerts topic sharing underlying broker with other queues.
+  longDescription: Creates a alerts topic sized queue sharing underlying broker with other queues.
+  addressType: topic
+  resources:
+    router: 0.5
+    broker: 0.2

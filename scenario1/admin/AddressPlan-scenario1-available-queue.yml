@@ -1,0 +1,15 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressPlan
+metadata:
+  name: scenario1-available-queue
+  labels:
+    app: enmasse
+spec:
+  displayName: available Queue
+  displayOrder: 1
+  shortDescription: Creates a available queue sharing underlying broker with other queues.
+  longDescription: Creates a available sized queue sharing underlying broker with other queues.
+  addressType: queue
+  resources:
+    router: 1.0
+    broker: 1.0

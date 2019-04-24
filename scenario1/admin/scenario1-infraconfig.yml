@@ -1,0 +1,21 @@
+apiVersion: admin.enmasse.io/v1beta1
+kind: StandardInfraConfig
+metadata:
+  labels:
+    app: enmasse
+  name: scenario1infraconfig
+  namespace: enmasse-infra
+spec:
+  admin:
+    resources:
+      memory: 512Mi
+  broker:
+    addressFullPolicy: FAIL
+    resources:
+      memory: 4Gi
+      storage: 20Gi
+  router:
+    linkCapacity: 1000
+    minReplicas: 4
+    resources:
+      memory: 512Mi

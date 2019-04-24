@@ -1,0 +1,15 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressPlan
+metadata:
+  name: scenario1-online-queue
+  labels:
+    app: enmasse
+spec:
+  displayName: Online Queue
+  displayOrder: 1
+  shortDescription: Creates a online queue sharing underlying broker with other queues.
+  longDescription: Creates a online sized queue sharing underlying broker with other queues.
+  addressType: queue
+  resources:
+    router: 0.1
+    broker: 0.5

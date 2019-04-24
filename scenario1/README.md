@@ -12,10 +12,19 @@ Create a new Inventory to deploy Enmasse using Ansible Playbook.
 Sample inventory defined as [scenario1-with-standard-authservice.txt](./enmasse/scenario1-with-standard-authservice.txt) file:
 
 ```
+tar xvzf enmasse-0.28.0-rc6.tgz
+
+cd ansible
+
 ansible-playbook -i inventory/scenario1-with-standard-authservice.txt playbooks/openshift/deploy_all.yml
 ```
 
 Installation must be done with a ```cluster-admin``` user.
+
+
+### https://github.com/EnMasseProject/enmasse/pull/2733/
+
+Have to replace "${OAUTH_PROXY_IMAGE}" with "openshift/oauth-proxy:latest" in enmasse-0.28.0-rc6  
 
 
 ## Deploy Administrative Resources

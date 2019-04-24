@@ -18,6 +18,11 @@ ansible-playbook -i inventory/scenario1-with-standard-authservice.txt playbooks/
 Installation must be done with a ```cluster-admin``` user.
 
 
+### https://github.com/EnMasseProject/enmasse/pull/2733/
+
+Have to replace "${OAUTH_PROXY_IMAGE}" with "openshift/oauth-proxy:latest" in enmasse-0.28.0-rc6  
+
+
 ## Deploy Administrative Resources
 
 As ```cluster-admin``` deploy following objects in ```enmasse-infra``` namespace:

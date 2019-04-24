@@ -89,6 +89,12 @@ for i in $(seq 1 100); do
 done;
 ```
 
+To create an admin user:
+
+```
+oc process -f users/scenario1-user-admin-template.yml -p USER_ID=admin -p USER_PWD=dGVzdA== | oc apply -f -
+```
+
 To activate ```online``` window:
 
 ```

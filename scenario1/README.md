@@ -45,6 +45,11 @@ oc apply -f admin/AddressPlan-scenario1-results-queue.yml
 oc apply -f admin/scenario1-address-space-plan.yml
 ```
 
+### Sizing spreadsheet
+
+https://docs.google.com/spreadsheets/d/1Ga2Rq9OlayxJrlx-eHrK_Pe5PDmk3WA_akzbgCbgQ1I/edit#gid=0
+
+
 ## Deploy Tenant Resources
 
 As non ```cluster-admin``` user create a new project to define our scenario:

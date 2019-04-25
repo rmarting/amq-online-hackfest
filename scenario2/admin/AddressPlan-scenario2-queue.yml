@@ -1,0 +1,14 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressPlan
+metadata:
+  name: scenario2-queue
+  labels:
+    app: enmasse
+spec:
+  displayName: Scenario2 Queue
+  displayOrder: 1
+  shortDescription: Creates a queue sharing underlying broker with other queues.
+  longDescription: Creates a queue sharing underlying broker with other queues.
+  addressType: queue
+  resources:
+    broker: 0.1

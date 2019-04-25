@@ -1,0 +1,40 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+labels:
+  template: scenario2-application-user-template
+objects:  
+- apiVersion: user.enmasse.io/v1beta1
+  kind: MessagingUser
+  metadata:
+    name: ${TENANT}.${APP_ID}
+  spec:
+    username: ${APP_ID}
+    authentication:
+      type: password
+      password: ${APP_PWD} # Base64 encoded
+    authorization:
+      - addresses: ["queue/*", "topic/*"]
+        operations: ["recv", "send"]
+- apiVersion: v1
+  metadata:
+    name: secret-app-${APP_ID}
+  data:
+    password: ${APP_PWD} # Base64 encoded
+  kind: Secret
+  type: Opaque
+parameters:
+- description: Tenant
+  displayName: Tenant
+  name: TENANT
+  required: true
+- description: App ID.
+  displayName: App ID
+  name: APP_ID
+  required: true
+- description: App Password
+  displayName: App Password
+  name: APP_PWD
+  # from: '[A-Z0-9]{8}'
+  # generate: expression
+  required: true
+message: "Your credentials are ${APP_PWD}"

@@ -1,0 +1,30 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+labels:
+  template: scenario2-address-template
+objects:  
+- apiVersion: enmasse.io/v1beta1
+  kind: Address
+  metadata:
+    name: ${TENANT}.${ADDRESS}
+  spec:
+    address: ${ADDRESS_NAME}
+    type: ${ADDRESS_TYPE}
+    plan: scenario2-${ADDRESS_TYPE}
+parameters:
+- description: Tenant
+  displayName: Tenant
+  name: TENANT
+  required: true
+- description: Address Name for OpenShift.
+  displayName: Address Name for OpenShift
+  name: ADDRESS
+  required: true
+- description: Address Name for Broker. Real name of the address.
+  displayName: Address Name for Broker. Real name of the address.
+  name: ADDRESS_NAME
+  required: true
+- description: Address Type [queue|topic]
+  displayName: Address Type [queue|topic]
+  name: ADDRESS_TYPE
+  required: true

@@ -1,0 +1,17 @@
+apiVersion: admin.enmasse.io/v1beta2
+kind: AddressSpacePlan
+metadata:
+  labels:
+    app: enmasse
+  name: scenario2-prod
+  namespace: enmasse-infra
+spec:
+  addressPlans:
+  - scenario2-queue
+  - scenario2-topic
+  addressSpaceType: brokered
+  displayName: Scenario2-PROD
+  displayOrder: 0
+  infraConfigRef: scenario2infraconfig
+  resourceLimits:
+    broker: 20

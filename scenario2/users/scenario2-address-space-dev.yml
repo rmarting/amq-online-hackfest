@@ -1,0 +1,18 @@
+apiVersion: enmasse.io/v1beta1
+kind: AddressSpace
+metadata:
+  name: scenario2-dev
+spec:
+  type: brokered
+  plan: scenario2-dev
+  endpoints:
+    - name: messaging
+      service: messaging
+    - name: console
+      service: console
+      expose:
+        type: route
+        routeTlsTermination: reencrypt
+        routeServicePort: https
+      cert:
+        provider: openshift

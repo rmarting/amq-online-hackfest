@@ -1,0 +1,24 @@
+apiVersion: admin.enmasse.io/v1beta1
+kind: BrokeredInfraConfig
+metadata:
+  labels:
+    app: enmasse
+  name: scenario2infraconfig-non-prod
+  namespace: enmasse-infra
+spec:
+  admin:
+    resources:
+      memory: 512Mi
+    podTemplate:
+      metadata:
+        labels:
+          agent-type: non-prod
+  broker:
+    addressFullPolicy: FAIL
+    resources:
+      memory: 2Gi
+      storage: 1Gi
+    podTemplate:
+      metadata:
+        labels:
+          broker-type: non-prod

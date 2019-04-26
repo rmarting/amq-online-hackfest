@@ -85,7 +85,7 @@ oc apply -f users/scenario1-address-alerts-topic.yml
 ```
 
 3.- Create users and custom resources using a OpenShift Template 
-called [scenario1-user-template](./users/scenario1-user-template)
+called [scenario1-user-template.yml](./users/scenario1-user-template.yml)
 
 For a single user:
 
@@ -99,7 +99,7 @@ To deploy bulk or users there is a simple shell script to do that similar to:
 
 ```
 for i in $(seq 1 100); do
-  oc process -f users/scenario1-user-template.yaml -p USER_ID=customer$i -p USER_PWD=dGVzdA== | oc apply -f -
+  oc process -f users/scenario1-user-template.yml -p USER_ID=customer$i -p USER_PWD=dGVzdA== | oc apply -f -
 done;
 ```
 

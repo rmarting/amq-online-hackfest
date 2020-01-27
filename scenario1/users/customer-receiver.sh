@@ -16,9 +16,10 @@ fi
 
 CUSTOMER_ID=$1
 COUNT=$2
+MESSAGING_ENDPOINT=$(oc get addressspace scenario1 --output='jsonpath={.status.endpointStatuses[?(@.name=="messaging")].externalHost}')
 
-echo "Consuming $COUNT messages from results_customer$CUSTOMER_ID address"
+echo "Consuming $COUNT messages from results_customer$CUSTOMER_ID address at $MESSAGING_ENDPOINT"
 
 cli-proton-python-receiver \
-  -b amqps://customer$CUSTOMER_ID:test@messaging-r9nbg9z7zi-enmasse-infra.apps.amqhackfest-emea02.openshift.opentlc.com:443/results_customer$CUSTOMER_ID \
+  -b amqps://customer$CUSTOMER_ID:test@$MESSAGING_ENDPOINT:443/results_customer$CUSTOMER_ID \
   -c $COUNT

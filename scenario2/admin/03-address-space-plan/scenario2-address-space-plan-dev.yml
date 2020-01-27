@@ -4,15 +4,14 @@ metadata:
   labels:
     app: enmasse
   name: scenario2-dev
-  namespace: enmasse-infra
+  namespace: amq-online-infra
 spec:
+  displayName: Scenario2 DEV
+  displayOrder: 0
+  addressSpaceType: brokered
+  infraConfigRef: scenario2-infra-config-non-prod
   addressPlans:
   - scenario2-queue
   - scenario2-topic
-  addressSpaceType: brokered
-  displayName: Scenario2-DEV
-  displayOrder: 0
-  infraConfigRef: scenario2infraconfig-non-prod
   resourceLimits:
     broker: 2
-    

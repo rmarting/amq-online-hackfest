@@ -3,8 +3,8 @@ kind: BrokeredInfraConfig
 metadata:
   labels:
     app: enmasse
-  name: scenario2infraconfig-non-prod
-  namespace: enmasse-infra
+  name: scenario2-infra-config-non-prod
+  namespace: amq-online-infra
 spec:
   admin:
     resources:

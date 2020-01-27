@@ -2,14 +2,15 @@
 localhost ansible_connection=local
 
 [enmasse:vars]
-namespace=enmasse-infra
+namespace=amq-online-infra
 enable_rbac=True
 api_server=True
 service_catalog=False
 register_api_server=True
 keycloak_admin_password=admin
 authentication_services=["standard"]
-monitoring_infrastructure=True
-service_monitors=True
-alerting=True
-install_example_plans=True
+standard_authentication_service_postgresql=False
+postgresql_password=password
+monitoring_namespace=amq-online-monitoring
+monitoring_operator=True
+monitoring=True

@@ -3,8 +3,8 @@ kind: StandardInfraConfig
 metadata:
   labels:
     app: enmasse
-  name: scenario1infraconfig
-  namespace: enmasse-infra
+  name: scenario1-infra-config
+  namespace: amq-online-infra
 spec:
   admin:
     resources:
